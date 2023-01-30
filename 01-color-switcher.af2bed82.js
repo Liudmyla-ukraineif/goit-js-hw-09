@@ -1,0 +1,2 @@
+const t={body:document.querySelector("body"),buttonStart:document.querySelector("button[data-start]"),buttonStop:document.querySelector("button[data-stop]")};let o=null;function n(){t.body.style.backgroundColor=`#${Math.floor(16777215*Math.random()).toString(16)}`}t.buttonStart.addEventListener("click",(function(){o=setInterval(n,1e3),t.buttonStart.disabled=!0})),t.buttonStop.addEventListener("click",(function(){clearInterval(o),t.buttonStart.disabled=!1}));
+//# sourceMappingURL=01-color-switcher.af2bed82.js.map
