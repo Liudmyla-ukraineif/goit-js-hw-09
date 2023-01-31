@@ -6,9 +6,9 @@ function createPromise(position, delay) {
     const shouldResolve = Math.random() > 0.3;
     setTimeout(()=>{
       if (shouldResolve) {
-        resolve(position, delay);
+        resolve({ position, delay });
       } else {
-        reject(position, delay);
+        reject({ position, delay });
       }
     }, delay);
   })
@@ -36,8 +36,9 @@ function onSendForm (e){
       })
       .catch(({ position, delay }) => {
         Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
-    valueDelay += valueStep;
-  })
+      });
+      valueDelay += valueStep;
+  };
 }
-}
+
 
